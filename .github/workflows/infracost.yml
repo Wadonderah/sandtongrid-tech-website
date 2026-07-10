@@ -36,10 +36,10 @@ jobs:
           infracost breakdown --path=. \
             --terraform-var-file=terraform.tfvars \
             --format=json \
-            --out-file=/tmp/infracost.json
+            --out-file=infracost.json
 
       - name: Post Infracost Comment
         uses: infracost/actions/comment@v3
         with:
-          path: /tmp/infracost.json
+          path: environments/prod/infracost.json
           behavior: update
