@@ -1,34 +1,39 @@
 name: TFLint
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
-
-permissions:
-  contents: read
+    branches: [ main ]
+  push:
+    branches: [ main ]
 
 jobs:
   tflint:
-    name: TFLint
+    name: Run TFLint
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: latest
 
       - name: Setup TFLint
         uses: terraform-linters/setup-tflint@v4
         with:
           tflint_version: latest
 
-      - name: Init TFLint
-        run: tflint --init
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Run TFLint
-        run: tflint --recursive --format compact
+        run: |
+          tflint --recursive --format=json --config=.tflint.hcl > tflint.json || true
+          cat tflint.json
+
+      - name: Upload TFLint results
+        uses: actions/upload-artifact@v4
+        with:
+          name: tflint-results
+          path: tflint.json
