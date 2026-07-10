@@ -1,0 +1,48 @@
+:root {
+
+--font-primary:
+"Inter",
+"Segoe UI",
+sans-serif;
+
+--font-heading:
+"Poppins",
+sans-serif;
+
+--font-code:
+"JetBrains Mono",
+monospace;
+
+/* Font Sizes */
+
+--fs-xs:.75rem;
+
+--fs-sm:.875rem;
+
+--fs-md:1rem;
+
+--fs-lg:1.125rem;
+
+--fs-xl:1.5rem;
+
+--fs-2xl:2rem;
+
+--fs-3xl:2.8rem;
+
+--fs-4xl:4rem;
+
+/* Font Weight */
+
+--fw-light:300;
+
+--fw-normal:400;
+
+--fw-medium:500;
+
+--fw-semibold:600;
+
+--fw-bold:700;
+
+--fw-black:900;
+
+}

@@ -1,0 +1,36 @@
+name: Terraform Docs
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "modules/**/*.tf"
+      - "environments/**/*.tf"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  docs:
+    name: Generate Module Docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      # NOTE: modules/ itself has no .tf files (only its subdirectories
+      # do), so each real module has to be listed explicitly here.
+      # Add new modules to this list when they're created.
+      - name: Render Terraform Docs
+        uses: terraform-docs/gh-actions@v1
+        with:
+          working-dir: modules/acm,modules/backend,modules/cloudfront,modules/github_oidc,modules/github_oidc_policy,modules/logging,modules/monitoring,modules/route53,modules/s3,modules/website_deployment,environments/prod
+          output-file: README.md
+          output-method: inject
+          git-push: "true"
+          config-file: .terraform-docs.yml

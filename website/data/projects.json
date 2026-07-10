@@ -1,0 +1,20 @@
+[
+    {
+        "title": "AWS Cloud Migration for FinTech Company",
+        "description": "Migrated 200+ servers from on-premise to AWS with zero downtime using Terraform and AWS Migration Services.",
+        "image": "assets/projects/fintech-migration.svg",
+        "link": "#projects"
+    },
+    {
+        "title": "Kubernetes CI/CD Pipeline",
+        "description": "Implemented GitOps workflow using GitHub Actions, ArgoCD, and EKS for automated deployments.",
+        "image": "assets/projects/kubernetes-pipeline.svg",
+        "link": "#projects"
+    },
+    {
+        "title": "Terraform Infrastructure Automation",
+        "description": "Built modular Terraform infrastructure for multi-environment AWS deployments with VPC, ECS, and RDS.",
+        "image": "assets/projects/terraform-automation.svg",
+        "link": "#projects"
+    }
+]

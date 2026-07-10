@@ -1,0 +1,45 @@
+name: Infracost
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "modules/**/*.tf"
+      - "environments/**/*.tf"
+      - "environments/**/*.tfvars"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+defaults:
+  run:
+    working-directory: environments/prod
+
+jobs:
+  infracost:
+    name: Infracost Estimate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Infracost
+        uses: infracost/actions/setup@v3
+        with:
+          api-key: ${{ secrets.INFRACOST_API_KEY }}
+
+      - name: Generate Infracost Cost Diff
+        run: |
+          infracost breakdown --path=. \
+            --terraform-var-file=terraform.tfvars \
+            --format=json \
+            --out-file=/tmp/infracost.json
+
+      - name: Post Infracost Comment
+        uses: infracost/actions/comment@v3
+        with:
+          path: /tmp/infracost.json
+          behavior: update

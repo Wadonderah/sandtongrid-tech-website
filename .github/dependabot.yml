@@ -1,0 +1,40 @@
+version: 2
+updates:
+
+  # Keep Terraform provider/module versions current
+  - package-ecosystem: "terraform"
+    directory: "/environments/prod"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "terraform"
+
+  - package-ecosystem: "terraform"
+    directory: "/environments/dev"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "terraform"
+
+  - package-ecosystem: "terraform"
+    directory: "/environments/staging"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "terraform"
+
+  # Keep GitHub Actions themselves current
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"

@@ -1,0 +1,23 @@
+[
+    {
+        "name": "James Mwangi",
+        "company": "FinTech Kenya",
+        "project": "AWS Cloud Migration",
+        "rating": 5,
+        "message": "Sandtongrid Tech migrated our workloads to AWS with zero downtime. Their Terraform automation saved us weeks of manual work."
+    },
+    {
+        "name": "Sarah Achieng",
+        "company": "Health Systems Ltd",
+        "project": "Infrastructure Automation",
+        "rating": 5,
+        "message": "Professional, knowledgeable and highly reliable. The infrastructure is now easier to manage and far more secure."
+    },
+    {
+        "name": "David Otieno",
+        "company": "Logistics Africa",
+        "project": "DevOps Transformation",
+        "rating": 5,
+        "message": "Excellent DevOps implementation. Our deployment time dropped dramatically thanks to the CI/CD pipeline."
+    }
+]

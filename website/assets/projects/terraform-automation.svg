@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+    <rect width="800" height="600" fill="#4a148c"/>
+    <rect y="400" width="800" height="200" fill="#6a1b9a"/>
+    <circle cx="200" cy="200" r="80" fill="#ab47bc" opacity="0.3"/>
+    <circle cx="600" cy="250" r="100" fill="#ab47bc" opacity="0.2"/>
+    <text x="400" y="280" font-family="Arial" font-size="36" fill="white" text-anchor="middle" font-weight="bold">Terraform Automation</text>
+    <text x="400" y="330" font-family="Arial" font-size="20" fill="#ce93d8" text-anchor="middle">Infrastructure as Code</text>
+    <text x="400" y="450" font-family="Arial" font-size="16" fill="#ba68c8" text-anchor="middle">🏗️ IaC • 📦 VPC &amp; ECS • ⚙️ Multi-Environment</text>
+</svg>

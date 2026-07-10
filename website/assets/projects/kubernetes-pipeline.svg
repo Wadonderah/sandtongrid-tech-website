@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+    <rect width="800" height="600" fill="#1b5e20"/>
+    <rect y="400" width="800" height="200" fill="#2e7d32"/>
+    <circle cx="200" cy="200" r="80" fill="#66bb6a" opacity="0.3"/>
+    <circle cx="600" cy="250" r="100" fill="#66bb6a" opacity="0.2"/>
+    <text x="400" y="280" font-family="Arial" font-size="36" fill="white" text-anchor="middle" font-weight="bold">Kubernetes Pipeline</text>
+    <text x="400" y="330" font-family="Arial" font-size="20" fill="#a5d6a7" text-anchor="middle">CI/CD with EKS &amp; ArgoCD</text>
+    <text x="400" y="450" font-family="Arial" font-size="16" fill="#81c784" text-anchor="middle">⚡ GitOps • 🐳 Containers • �� Automated Deploy</text>
+</svg>

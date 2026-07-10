@@ -1,0 +1,57 @@
+{
+    "company": {
+        "name": "Sandtongrid Technologies",
+        "tagline": "Building Secure, Scalable & Reliable Cloud Solutions"
+    },
+
+    "logos": {
+        "light": "assets/logos/logo-light.png",
+        "dark": "assets/logos/logo-dark.png",
+        "horizontal": "assets/logos/logo-horizontal.png",
+        "icon": "assets/logos/logo-icon.png"
+    },
+
+    "illustrations": {
+        "hero": "assets/illustrations/cloud-hero.svg",
+        "architecture": "assets/illustrations/cloud-architecture.svg",
+        "migration": "assets/illustrations/cloud-migration.svg"
+    },
+
+    "backgrounds": {
+        "grid": "assets/backgrounds/grid.svg",
+        "gradient": "assets/backgrounds/gradient.svg",
+        "dots": "assets/backgrounds/dots.svg"
+    },
+
+    "technologies": {
+        "aws": "assets/technologies/aws.svg",
+        "terraform": "assets/technologies/terraform.svg",
+        "docker": "assets/technologies/docker.svg",
+        "kubernetes": "assets/technologies/kubernetes.svg",
+        "githubActions": "assets/technologies/github-actions.svg",
+        "linux": "assets/technologies/linux.svg",
+        "nginx": "assets/technologies/nginx.svg",
+        "cloudfront": "assets/technologies/cloudfront.svg",
+        "route53": "assets/technologies/route53.svg"
+    },
+
+    "awsIcons": {
+        "ec2": "assets/aws-icons/ec2.svg",
+        "s3": "assets/aws-icons/s3.svg",
+        "vpc": "assets/aws-icons/vpc.svg",
+        "lambda": "assets/aws-icons/lambda.svg",
+        "cloudfront": "assets/aws-icons/cloudfront.svg",
+        "route53": "assets/aws-icons/route53.svg",
+        "rds": "assets/aws-icons/rds.svg",
+        "alb": "assets/aws-icons/alb.svg",
+        "waf": "assets/aws-icons/waf.svg",
+        "iam": "assets/aws-icons/iam.svg"
+    },
+
+    "social": {
+        "linkedin": "assets/social/linkedin.svg",
+        "github": "assets/social/github.svg",
+        "x": "assets/social/x.svg",
+        "youtube": "assets/social/youtube.svg"
+    }
+}

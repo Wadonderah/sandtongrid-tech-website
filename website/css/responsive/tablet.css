@@ -1,0 +1,29 @@
+/* ==========================================================
+   TABLET  (901px - 1024px)
+========================================================== */
+
+@media (min-width: 901px) and (max-width: 1024px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .services-grid,
+    .why-grid,
+    .projects-grid,
+    .technology-grid,
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

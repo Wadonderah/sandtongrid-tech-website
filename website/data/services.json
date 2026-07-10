@@ -1,0 +1,42 @@
+[
+  {
+    "title": "AWS Cloud Architecture",
+    "icon": "cloud.svg",
+    "description": "Designing scalable, resilient and secure AWS environments following AWS Well-Architected best practices."
+  },
+  {
+    "title": "Cloud Migration",
+    "icon": "cloud-upload.svg",
+    "description": "Seamlessly migrating workloads, applications and databases to AWS with minimal downtime."
+  },
+  {
+    "title": "Cloud Security",
+    "icon": "shield-check.svg",
+    "description": "Identity management, encryption, compliance, governance and cloud security assessments."
+  },
+  {
+    "title": "DevOps & CI/CD",
+    "icon": "workflow.svg",
+    "description": "Automating software delivery using GitHub Actions, Docker, Kubernetes and Terraform."
+  },
+  {
+    "title": "Cloud Monitoring",
+    "icon": "chart-column.svg",
+    "description": "Real-time monitoring, logging and alerting using AWS CloudWatch and observability tools."
+  },
+  {
+    "title": "Cost Optimization",
+    "icon": "badge-dollar-sign.svg",
+    "description": "Reducing cloud spend while maximizing performance through AWS cost optimization strategies."
+  },
+  {
+    "title": "Disaster Recovery",
+    "icon": "refresh-ccw.svg",
+    "description": "Designing resilient backup and disaster recovery strategies to keep your business running."
+  },
+  {
+    "title": "Infrastructure as Code",
+    "icon": "boxes.svg",
+    "description": "Provisioning repeatable cloud infrastructure using Terraform and AWS best practices."
+  }
+]

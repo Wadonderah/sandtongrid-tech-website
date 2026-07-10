@@ -1,0 +1,30 @@
+
+/* ==========================================================
+   LIGHT THEME
+========================================================== */
+
+:root {
+
+    color-scheme: light;
+
+}
+
+body.light {
+
+    --background:#FFFFFF;
+
+    --surface:#F8FAFC;
+
+    --surface-2:#EEF2F6;
+
+    --text:#0F172A;
+
+    --text-light:#475569;
+
+    --border:#E2E8F0;
+
+    --glass:rgba(255,255,255,.75);
+
+    --glass-border:rgba(255,255,255,.35);
+
+}

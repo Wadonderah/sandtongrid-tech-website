@@ -1,0 +1,27 @@
+name: Deploy - Staging
+
+on:
+  push:
+    branches:
+      - staging
+    paths:
+      - "modules/**"
+      - "environments/staging/**"
+  pull_request:
+    branches:
+      - staging
+    paths:
+      - "modules/**"
+      - "environments/staging/**"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/reusable-terraform-deploy.yml
+    with:
+      working_directory: environments/staging
+      github_environment: staging
+    secrets: inherit

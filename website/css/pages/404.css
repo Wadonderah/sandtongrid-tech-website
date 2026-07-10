@@ -1,0 +1,57 @@
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #07152f 0%, #123d72 100%);
+}
+
+.error-container {
+    max-width: 700px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.error-logo {
+    width: 220px;
+    margin-bottom: 2rem;
+}
+
+.error-container h1 {
+    font-size: clamp(5rem, 12vw, 8rem);
+    line-height: 1;
+    color: #FF9900;
+    margin-bottom: 1rem;
+}
+
+.error-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.error-container p {
+    max-width: 550px;
+    margin: 0 auto 2rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,.85);
+}
+
+.error-container .btn-primary {
+    display: inline-block;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #FF9900;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color .3s ease;
+}
+
+.btn-primary:hover {
+    background: #e68a00;
+}

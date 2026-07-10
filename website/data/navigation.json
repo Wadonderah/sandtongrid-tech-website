@@ -1,0 +1,8 @@
+[
+    { "title": "Home", "link": "#home" },
+    { "title": "Services", "link": "#services" },
+    { "title": "Projects", "link": "#projects" },
+    { "title": "About", "link": "#about" },
+    { "title": "Downloads", "link": "#downloads" },
+    { "title": "Contact", "link": "#contact" }
+]

@@ -1,0 +1,119 @@
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:min(92%,var(--container-xl));
+
+    margin:auto;
+
+}
+
+/* ===========================
+   FLEX
+=========================== */
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.grid{
+
+    display:grid;
+
+}
+
+/* ===========================
+   TEXT
+=========================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-white{
+
+    color:#fff;
+
+}
+
+/* ===========================
+   SPACING
+=========================== */
+
+.mt-lg{
+
+    margin-top:var(--space-lg);
+
+}
+
+.mt-xl{
+
+    margin-top:var(--space-xl);
+
+}
+
+.mb-lg{
+
+    margin-bottom:var(--space-lg);
+
+}
+
+.mb-xl{
+
+    margin-bottom:var(--space-xl);
+
+}
+
+/* ===========================
+   BUTTON GROUP
+=========================== */
+
+.button-group{
+
+    display:flex;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+/* ===========================
+   HIDDEN
+=========================== */
+
+.hidden{
+
+    display:none;
+
+}

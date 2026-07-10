@@ -1,0 +1,45 @@
+:root {
+
+/* AWS Inspired */
+
+--aws-orange:#FF9900;
+
+--aws-dark:#232F3E;
+
+--aws-blue:#146EB4;
+
+--aws-light:#F5F8FA;
+
+/* Light Theme */
+
+--background:#FFFFFF;
+
+--surface:#F8FAFC;
+
+--surface-2:#EEF2F6;
+
+--text:#0F172A;
+
+--text-light:#475569;
+
+--border:#E2E8F0;
+
+/* Accent */
+
+--primary:var(--aws-orange);
+
+--secondary:var(--aws-blue);
+
+--success:#22C55E;
+
+--warning:#F59E0B;
+
+--danger:#EF4444;
+
+/* Glass */
+
+--glass:rgba(255,255,255,.65);
+
+--glass-border:rgba(255,255,255,.18);
+
+}

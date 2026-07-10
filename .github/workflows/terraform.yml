@@ -1,0 +1,27 @@
+name: Deploy - Production
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "modules/**"
+      - "environments/prod/**"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "modules/**"
+      - "environments/prod/**"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/reusable-terraform-deploy.yml
+    with:
+      working_directory: environments/prod
+      github_environment: production
+    secrets: inherit

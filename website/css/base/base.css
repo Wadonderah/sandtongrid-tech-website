@@ -1,0 +1,92 @@
+
+body{
+
+    font-family:var(--font-primary);
+
+    background:var(--background);
+
+    color:var(--text);
+
+    line-height:1.7;
+
+    overflow-x:hidden;
+
+    transition:
+
+    background var(--transition-normal),
+
+    color var(--transition-normal);
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--surface);
+
+}
+
+/* Headings */
+
+h1,h2,h3,h4,h5,h6{
+
+    font-family:var(--font-heading);
+
+    font-weight:var(--fw-bold);
+
+    line-height:1.2;
+
+}
+
+h1{
+
+    font-size:var(--fs-4xl);
+
+}
+
+h2{
+
+    font-size:var(--fs-3xl);
+
+}
+
+h3{
+
+    font-size:var(--fs-2xl);
+
+}
+
+h4{
+
+    font-size:var(--fs-xl);
+
+}
+
+p{
+
+    color:var(--text-light);
+
+    font-size:var(--fs-md);
+
+}
+
+section{
+
+    padding:var(--section-padding) 0;
+
+}

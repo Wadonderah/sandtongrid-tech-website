@@ -1,0 +1,124 @@
+name: Reusable - Terraform Deploy
+
+on:
+  workflow_call:
+    inputs:
+      working_directory:
+        description: "Path to the environment (e.g. environments/dev)"
+        required: true
+        type: string
+      github_environment:
+        description: "GitHub Environment name — controls which secrets are used and whether manual approval is required"
+        required: true
+        type: string
+      var_file:
+        description: "tfvars file relative to working_directory"
+        required: false
+        type: string
+        default: "terraform.tfvars"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+
+  validate:
+    name: Format & Validate
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working_directory }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: ./.github/actions/setup-terraform
+        with:
+          working_directory: ${{ inputs.working_directory }}
+
+      - name: Terraform Format
+        run: terraform fmt -check -recursive ../..
+
+      - name: Terraform Validate
+        run: terraform validate
+
+  plan:
+    name: Terraform Plan
+    runs-on: ubuntu-latest
+    needs: validate
+    environment: ${{ inputs.github_environment }}
+    defaults:
+      run:
+        working-directory: ${{ inputs.working_directory }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: ./.github/actions/setup-terraform
+        with:
+          working_directory: ${{ inputs.working_directory }}
+
+      - name: Terraform Plan
+        run: |
+          terraform plan \
+            -var-file=${{ inputs.var_file }} \
+            -input=false \
+            -lock-timeout=300s \
+            -out=tfplan
+
+      - name: Upload Terraform Plan
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan-${{ inputs.github_environment }}-${{ github.run_id }}
+          path: ${{ inputs.working_directory }}/tfplan
+          retention-days: 7
+
+  apply:
+    name: Terraform Apply
+    runs-on: ubuntu-latest
+    needs: plan
+    # Never apply from a pull request — only ever from a direct push
+    # to the branch that owns this environment. Environments with a
+    # required-reviewers protection rule (e.g. "production") will
+    # additionally pause here for manual approval regardless of this
+    # condition.
+    if: github.event_name == 'push'
+    environment: ${{ inputs.github_environment }}
+    defaults:
+      run:
+        working-directory: ${{ inputs.working_directory }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Setup Terraform
+        uses: ./.github/actions/setup-terraform
+        with:
+          working_directory: ${{ inputs.working_directory }}
+
+      - name: Download Terraform Plan
+        uses: actions/download-artifact@v4
+        with:
+          name: tfplan-${{ inputs.github_environment }}-${{ github.run_id }}
+          path: ${{ inputs.working_directory }}
+
+      - name: Terraform Apply
+        run: terraform apply -input=false -lock-timeout=300s tfplan

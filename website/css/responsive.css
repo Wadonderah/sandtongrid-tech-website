@@ -1,0 +1,5 @@
+/* This file is superseded by css/responsive/mobile.css and
+   css/responsive/tablet.css (both imported via main.css).
+   It was never actually linked into the page, so all mobile
+   nav/grid rules now live in those two files instead. Left
+   empty on purpose to avoid dead/duplicate CSS confusion. */

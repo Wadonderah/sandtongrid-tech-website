@@ -1,0 +1,11 @@
+[
+    {"name":"Amazon Web Services","icon":"aws.svg","description":"Secure, scalable cloud infrastructure."},
+    {"name":"Terraform","icon":"terraform.svg","description":"Infrastructure as Code."},
+    {"name":"Docker","icon":"docker.svg","description":"Containerized applications."},
+    {"name":"Kubernetes","icon":"kubernetes.svg","description":"Container orchestration."},
+    {"name":"GitHub Actions","icon":"github-actions.svg","description":"CI/CD Automation."},
+    {"name":"Linux","icon":"linux.svg","description":"Enterprise operating systems."},
+    {"name":"NGINX","icon":"nginx.svg","description":"High-performance web server."},
+    {"name":"CloudFront","icon":"cloudfront.svg","description":"Global content delivery."},
+    {"name":"Route 53","icon":"route53.svg","description":"Highly available DNS."}
+]

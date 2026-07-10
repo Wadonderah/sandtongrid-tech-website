@@ -1,0 +1,129 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg,
+            var(--hero-start, #07152F) 0%,
+            var(--hero-middle, #0C274D) 45%,
+            var(--hero-end, #123D72) 100%
+        );
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right,
+            rgba(255, 255, 255, .10),
+            transparent 35%
+        ),
+        radial-gradient(circle at bottom left,
+            rgba(255, 153, 0, .08),
+            transparent 40%
+        );
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.hero-content {
+    color: var(--text);
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: .55rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .12);
+    backdrop-filter: blur(10px);
+    font-size: .9rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.hero-content h1 {
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.hero-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 620px;
+    color: var(--text-light);
+    margin-bottom: 2.2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-stack {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.75rem;
+    flex-wrap: wrap;
+}
+
+.hero-stack img {
+    height: 28px;
+    width: auto;
+    opacity: .65;
+    filter: brightness(0) invert(1);
+    transition: opacity .25s ease;
+}
+
+.hero-stack img:hover {
+    opacity: 1;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 650px;
+    animation: floatCloud 6s ease-in-out infinite;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text);
+    opacity: .75;
+    animation: bounce 2s infinite;
+}
+
+@keyframes floatCloud {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 10px); }
+}

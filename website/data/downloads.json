@@ -1,0 +1,38 @@
+[
+    {
+        "title":"Company Profile",
+        "description":"Learn more about Sandtongrid Technologies, our services and company background.",
+        "file":"downloads/company-profile.pdf",
+        "icon":"📄"
+    },
+    {
+        "title":"Capability Statement",
+        "description":"Overview of our cloud consulting capabilities and technical expertise.",
+        "file":"downloads/capability-statement.pdf",
+        "icon":"📑"
+    },
+    {
+        "title":"AWS Portfolio",
+        "description":"AWS cloud architecture and implementation portfolio.",
+        "file":"downloads/aws-portfolio.pdf",
+        "icon":"☁️"
+    },
+    {
+        "title":"Terraform Portfolio",
+        "description":"Infrastructure as Code projects built using Terraform.",
+        "file":"downloads/terraform-portfolio.pdf",
+        "icon":"🏗️"
+    },
+    {
+        "title":"Service Brochure",
+        "description":"Detailed information about our AWS and DevOps services.",
+        "file":"downloads/service-brochure.pdf",
+        "icon":"📘"
+    },
+    {
+        "title":"Company Presentation",
+        "description":"Presentation introducing Sandtongrid Technologies.",
+        "file":"downloads/company-presentation.pdf",
+        "icon":"🎯"
+    }
+]

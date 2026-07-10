@@ -1,0 +1,43 @@
+
+[
+    {
+        "icon":"🏆",
+        "title":"AWS Best Practices",
+        "description":"Architecting cloud solutions following the AWS Well-Architected Framework."
+    },
+    {
+        "icon":"🔒",
+        "title":"Security First",
+        "description":"Identity management, encryption and governance are built into every solution."
+    },
+    {
+        "icon":"⚡",
+        "title":"DevOps Automation",
+        "description":"Automating deployments using Terraform, GitHub Actions and Infrastructure as Code."
+    },
+    {
+        "icon":"🚀",
+        "title":"High Availability",
+        "description":"Building resilient cloud infrastructure designed for uptime and business continuity."
+    },
+    {
+        "icon":"💰",
+        "title":"Cost Optimization",
+        "description":"Helping organizations reduce cloud costs without sacrificing performance."
+    },
+    {
+        "icon":"📈",
+        "title":"Scalable Architecture",
+        "description":"Infrastructure that grows seamlessly as your business expands."
+    },
+    {
+        "icon":"👨‍💻",
+        "title":"Cloud Expertise",
+        "description":"AWS-focused engineers delivering reliable and modern cloud solutions."
+    },
+    {
+        "icon":"🛠",
+        "title":"24/7 Support",
+        "description":"Reliable monitoring and operational support whenever you need assistance."
+    }
+]

@@ -1,0 +1,49 @@
+# Terraform plans
+tfplan
+*.tfplan
+plan.txt
+
+# Terraform crash logs
+crash.log
+
+# Sensitive variable examples
+*.auto.tfvars
+*.auto.tfvars.json
+
+# Environment files
+.env
+.env.**.auto.tfvars
+.auto.tfvars.example
+
+# Terraform files to ignore
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.tfstate.*
+*.tfplan
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+environments/**/.terraform/
+environments/**/terraform.tfstate
+environments/**/terraform.tfstate.backup
+environments/**/*.tfplan
+
+# Terraform files to ignore
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.tfstate.*
+*.tfplan
+*.tfvars
+*.tfvars.json
+terraform.tfvars
+environments/**/.terraform/
+environments/**/terraform.tfstate
+environments/**/terraform.tfstate.backup
+environments/**/*.tfplan
+
+# Go / Terratest
+*.test

@@ -1,0 +1,27 @@
+name: Deploy - Development
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - "modules/**"
+      - "environments/dev/**"
+  pull_request:
+    branches:
+      - develop
+    paths:
+      - "modules/**"
+      - "environments/dev/**"
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    uses: ./.github/workflows/reusable-terraform-deploy.yml
+    with:
+      working_directory: environments/dev
+      github_environment: development
+    secrets: inherit
