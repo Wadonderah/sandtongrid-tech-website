@@ -1,12 +1,24 @@
 name: Setup Terraform
 
-description: Install Terraform with plugin caching, and run init in the given directory
+description: Install Terraform with plugin caching, and run init with proper backend handling
 
 inputs:
   working_directory:
-    description: "Directory to run 'terraform init' in. Composite actions do NOT inherit the calling job's defaults.run.working-directory, so this must be passed explicitly."
+    description: "Directory to run 'terraform init' in"
     required: false
     default: "."
+  skip_backend:
+    description: "Skip backend initialization (use for validation only)"
+    required: false
+    default: "false"
+  backend_config_file:
+    description: "Path to backend configuration file"
+    required: false
+    default: ""
+  backend_config:
+    description: "Backend configuration arguments (space separated)"
+    required: false
+    default: ""
 
 runs:
   using: composite
@@ -34,7 +46,24 @@ runs:
         echo "plugin_cache_dir=\"$HOME/.terraform.d/plugin-cache\"" > ~/.terraformrc
         mkdir -p ~/.terraform.d/plugin-cache
 
-    - name: Terraform Init
+    - name: Terraform Init with Environment Variables
       shell: bash
       working-directory: ${{ inputs.working_directory }}
-      run: terraform init
+      run: |
+        # Check for backend config via environment variables
+        if [ -n "$TF_BACKEND_CONFIG" ]; then
+          echo "🔧 Using backend config from TF_BACKEND_CONFIG"
+          terraform init -backend-config="$TF_BACKEND_CONFIG"
+        elif [ -f "backend.hcl" ]; then
+          echo "🔧 Using backend.hcl file"
+          terraform init -backend-config=backend.hcl
+        elif [ -n "${{ inputs.backend_config_file }}" ]; then
+          echo "�� Using backend config file: ${{ inputs.backend_config_file }}"
+          terraform init -backend-config="${{ inputs.backend_config_file }}"
+        elif [ "${{ inputs.skip_backend }}" = "true" ]; then
+          echo "🔧 Running with -backend=false (validation mode)"
+          terraform init -backend=false
+        else
+          echo "⚠️  No backend configuration provided. Running default init."
+          terraform init
+        fi
