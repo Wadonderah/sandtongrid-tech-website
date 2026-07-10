@@ -17,22 +17,6 @@ crash.log
 
 # Terraform files to ignore
 .terraform/
-.terraform.lock.hcl
-*.tfstate
-*.tfstate.backup
-*.tfstate.*
-*.tfplan
-*.tfvars
-*.tfvars.json
-terraform.tfvars
-environments/**/.terraform/
-environments/**/terraform.tfstate
-environments/**/terraform.tfstate.backup
-environments/**/*.tfplan
-
-# Terraform files to ignore
-.terraform/
-.terraform.lock.hcl
 *.tfstate
 *.tfstate.backup
 *.tfstate.*
