@@ -119,7 +119,7 @@ jobs:
           working_directory: ${{ inputs.working_directory }}
 
       - name: Download Terraform Plan
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: tfplan-${{ inputs.github_environment }}-${{ github.run_id }}
           path: ${{ inputs.working_directory }}
