@@ -92,32 +92,6 @@ resource "aws_s3_bucket_public_access_block" "website_bucket_public_access" {
 
 # KMS Key for S3 Website Bucket Encryption
 resource "aws_kms_key" "s3_website_key" {
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "Enable IAM User Permissions"
-        Effect = "Allow"
-        Principal = {
-          AWS = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
-        }
-        Action   = "kms:*"
-        Resource = "*"
-      },
-      {
-        Sid    = "Allow S3 Service"
-        Effect = "Allow"
-        Principal = {
-          Service = "s3.amazonaws.com"
-        }
-        Action = [
-          "kms:Decrypt",
-          "kms:GenerateDataKey"
-        ]
-        Resource = "*"
-      }
-    ]
-  })
   description             = "KMS key for website bucket"
   deletion_window_in_days = 30
   enable_key_rotation     = true
