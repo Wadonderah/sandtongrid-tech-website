@@ -234,15 +234,15 @@ resource "aws_cloudfront_distribution" "website_distribution" {
 
 
   origin_group {
-    origin_id = origin-group-with-failover
+    origin_id = "origin-group-with-failover"
     failover_criteria {
       status_codes = [403, 404, 500, 502, 503, 504]
     }
     member {
-      origin_id = primary-origin
+      origin_id = "primary-origin"
     }
     member {
-      origin_id = secondary-origin
+      origin_id = "secondary-origin"
     }
   }
 }
